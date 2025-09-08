@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+
+.blinking-cursor {
+    font-weight: bold;
+    color: orange;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    from, to { color: transparent }
+    50% { color: orange }
+}
