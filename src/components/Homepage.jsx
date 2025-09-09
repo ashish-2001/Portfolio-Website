@@ -1,4 +1,5 @@
 import AboutMeSection from "./sections/AboutMeSection"
+import ContactMe from "./sections/ContactSection"
 import EducationSection from "./sections/EducationSection"
 import ExperienceSection from "./sections/ExperienceSection"
 import ProjectsSection from "./sections/ProjectSection"
@@ -14,6 +15,7 @@ function HomePage(){
             <EducationSection/>
             <ProjectsSection/>
             <ExperienceSection/>
+            <ContactMe/>
         </div>
     )
 }
