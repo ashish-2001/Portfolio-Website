@@ -8,7 +8,7 @@ const contactMeSchema = new mongoose.Schema({
         maxLength:80
     },
 
-    email: {
+    senderEmail: {
         type: String,
         trim: true,
         minLength:3,
@@ -16,14 +16,14 @@ const contactMeSchema = new mongoose.Schema({
         unique: true
     },
 
-    phoneNumber: {
+    senderPhoneNumber: {
         type: Number,
         unique:true,
         minLength:8,
         maxLength:12
     },
 
-    message:{
+    SenderMessage:{
         type: String,
         minLength: 10
     }
