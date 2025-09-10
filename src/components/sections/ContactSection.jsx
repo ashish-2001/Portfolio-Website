@@ -32,22 +32,23 @@ function ContactMe(){
                 <div className="flex justify-center items-center bg-white rounded-2xl gap-10 mt-10 mb-10">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOAXcOkHyvvRrDbMnDmc2Ck4XnYaafyLJ_Zg&s" className="rounded-l-2xl w-[400px]"/>
                     <form onSubmit={handleSubmit(submitContactForm)} className="pt-5">
-                        <div className="flex flex-col bg-white rounded-xl gap-6 p-6">
-                            <div className="flex justify-center items-center border-1 border-gray-600 p-3 gap-3 rounded-md bg-blue-100 text-xl">
-                                <FaUser/>
+                        <div className="flex flex-col bg-white rounded-xl gap-10 p-6">
+                            <div className="flex justify-center items-center relative border-1 border-gray-600 p-3 gap-3 rounded-md bg-blue-100 text-xl">
+                                <FaUser className="text-blue-800"/>
                                 <input 
+                                    type="text"
                                     placeholder="Name"
                                     className="w-[400px] form-style outline-none"
                                     id="senderName"
                                     name="senderName"
-                                    {...register("firstName", { required: true})}
+                                    {...register("senderName", { required: true})}
                                 />
                                 {errors.senderName && (
-                                    <span>Please enter your name!</span>
+                                    <span className="absolute left-0 -bottom-4 text-[12px] text-red-600 font-semibold">Please Enter Your Name!</span>
                                 )}
                             </div>
-                            <div className="flex justify-center items-center border-1 border-gray-600 rounded-md p-3 gap-3 bg-blue-100 text-xl">
-                                <MdOutlineEmail/>
+                            <div className="flex justify-center relative items-center border-1 border-gray-600 rounded-md p-3 gap-3 bg-blue-100 text-xl">
+                                <MdOutlineEmail className="text-red-600"/>
                                 <input 
                                     type="email"
                                     placeholder="Email"
@@ -57,11 +58,11 @@ function ContactMe(){
                                     {...register("email", { required: true})}
                                 />
                                 {errors.email && (
-                                    <span>Enter your email!</span>
+                                    <span className="absolute left-0 -bottom-4 text-[12px] text-red-600 font-semibold">Enter Your Email!</span>
                                 )}
                             </div>
-                            <div className="flex justify-center items-center border-1 border-gray-600 rounded-md p-3 gap-3 bg-blue-100 text-xl">
-                                <IoCall/>
+                            <div className="flex justify-center items-center relative border-1 border-gray-600 rounded-md p-3 gap-3 bg-blue-100 text-xl">
+                                <IoCall className="text-green-600"/>
                                 <input 
                                     placeholder="Phone Number" 
                                     className="w-[400px] form-style outline-none"
@@ -70,11 +71,11 @@ function ContactMe(){
                                     {...register("phoneNumber", { required: true })}
                                 />
                                 {errors.phoneNumber && (
-                                    <span>Enter your PhoneNumber</span>
+                                    <span className="absolute left-0 -bottom-4 text-[12px] text-red-600 font-semibold">Enter Your Phone Number!</span>
                                 )}
                             </div>
-                            <div className="flex justify-center border-1 border-gray-600 rounded-md  gap-3 bg-blue-100 h-[150px] text-xl pt-2">
-                                <RiMessage2Fill className="mt-[6px]"/>
+                            <div className="flex justify-center border-1 relative border-gray-600 rounded-md  gap-3 bg-blue-100 h-[150px] text-xl pt-2">
+                                <RiMessage2Fill className="mt-[6px] text-blue-700"/>
                                 <textarea 
                                     placeholder="Message" 
                                     className=" w-[400px] form-style outline-none"
@@ -83,7 +84,7 @@ function ContactMe(){
                                     {...register("message", { required: true })}
                                 />
                                 {errors.message && (
-                                    <span>Enter your message</span>
+                                    <span className="absolute left-0 -bottom-4 text-[12px] text-red-600 font-semibold">Enter your message!</span>
                                 )}
                             </div>
                             <div className="flex justify-end items-center">
