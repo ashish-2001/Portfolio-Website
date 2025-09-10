@@ -35,22 +35,59 @@ function ContactMe(){
                         <div className="flex flex-col bg-white rounded-xl gap-6 p-6">
                             <div className="flex justify-center items-center border-1 border-gray-600 p-3 gap-3 rounded-md bg-blue-100 text-xl">
                                 <FaUser/>
-                                <input placeholder="Name" className="w-[400px]"/>
+                                <input 
+                                    placeholder="Name"
+                                    className="w-[400px] form-style outline-none"
+                                    id="senderName"
+                                    name="senderName"
+                                    {...register("firstName", { required: true})}
+                                />
+                                {errors.senderName && (
+                                    <span>Please enter your name!</span>
+                                )}
                             </div>
                             <div className="flex justify-center items-center border-1 border-gray-600 rounded-md p-3 gap-3 bg-blue-100 text-xl">
                                 <MdOutlineEmail/>
-                                <input placeholder="Email" className="w-[400px]"/>
+                                <input 
+                                    type="email"
+                                    placeholder="Email"
+                                    className="w-[400px] form-style outline-none"
+                                    id="email"
+                                    name="email"
+                                    {...register("email", { required: true})}
+                                />
+                                {errors.email && (
+                                    <span>Enter your email!</span>
+                                )}
                             </div>
                             <div className="flex justify-center items-center border-1 border-gray-600 rounded-md p-3 gap-3 bg-blue-100 text-xl">
                                 <IoCall/>
-                                <input placeholder="Phone Number" className="w-[400px]"/>
+                                <input 
+                                    placeholder="Phone Number" 
+                                    className="w-[400px] form-style outline-none"
+                                    id="phoneNumber"
+                                    name="phoneNumber"
+                                    {...register("phoneNumber", { required: true })}
+                                />
+                                {errors.phoneNumber && (
+                                    <span>Enter your PhoneNumber</span>
+                                )}
                             </div>
                             <div className="flex justify-center border-1 border-gray-600 rounded-md  gap-3 bg-blue-100 h-[150px] text-xl pt-2">
                                 <RiMessage2Fill className="mt-[6px]"/>
-                                <textarea placeholder="Message" className=" w-[400px]"/>
+                                <textarea 
+                                    placeholder="Message" 
+                                    className=" w-[400px] form-style outline-none"
+                                    id="message"
+                                    name="message"
+                                    {...register("message", { required: true })}
+                                />
+                                {errors.message && (
+                                    <span>Enter your message</span>
+                                )}
                             </div>
                             <div className="flex justify-end items-center">
-                                <button className="flex items-center bg-blue-700 px-4 py-2 rounded-xl text-xl text-white font-semibold shadow-lg shadow-blue-800/80 gap-1">Submit <LuSend /></button>
+                                <button className="flex items-center cursor-pointer hover:scale-102 transition-all duration-100 bg-blue-700 px-4 py-2 rounded-xl text-xl text-white font-semibold shadow-lg shadow-blue-800/80 gap-1">Submit <LuSend /></button>
                             </div>
                         </div>
                     </form>

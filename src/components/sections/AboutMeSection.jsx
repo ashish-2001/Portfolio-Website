@@ -1,6 +1,11 @@
 import { FaUser } from "react-icons/fa"
+import logo from "../../assets/logo.png"
 
 function AboutMeSection(){
+
+    function handleResumeButton(){
+        window.open(`${logo}`, "_blank")
+    }
 
     return(
         <div className="w-full flex justify-center items-center">
@@ -31,7 +36,7 @@ function AboutMeSection(){
                             <p><span className="text-blue-600 font-semibold">Place: </span> Lucknow, U.P, India</p>
                         </div>
                         <div>
-                            <button className="bg-blue-800 px-6 py-2 rounded-md text-white font-bold shadow-lg shadow-blue-800/80 cursor-pointer">Resume</button>
+                            <button onClick={handleResumeButton} className="bg-blue-800 px-6 py-2 rounded-md text-white font-bold shadow-lg shadow-blue-800/80 cursor-pointer">Resume</button>
                         </div>
                     </div>
                 </div>

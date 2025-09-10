@@ -12,7 +12,7 @@ const contactMeForm = (
                 <title>Contact Form Information</title>
                 <style>
                     body {
-                        background-color: "#ffffff";
+                        background-color: #ffffff;
                         font-family: Arial, sans-serif;
                         font-size: 15px;
                         line-height: 1.4;
