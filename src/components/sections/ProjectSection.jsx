@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 function ProjectsSection(){
     
     return(
-        <div className="bg-purple-800 w-full flex justify-center pt-8 pb-15">
+        <div id="projects" className="bg-purple-800 w-full flex justify-center pt-8 pb-15">
             <div className="w-11/12 flex justify-center flex-col items-center gap-5">
                 <div className="flex justify-center items-center text-white text-4xl gap-3 pb-5">
                     <FaLaptopCode className="text-5xl pt-3"/>

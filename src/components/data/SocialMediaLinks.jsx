@@ -4,11 +4,11 @@ import { FaGithub, FaLinkedin, FaTelegramPlane, FaTwitterSquare } from "react-ic
 const SocialMediaLinks = [
     {
         icon: <FaLinkedin/>,
-        path: ""
+        path: "https://www.linkedin.com/in/ashish-pal-8680a9228/"
     },
     {
         icon: <FaGithub/>,
-        path: ""
+        path: "https://github.com/ashish-2001"
     },
     {
         icon: <CgMail/>,
@@ -16,11 +16,7 @@ const SocialMediaLinks = [
     },
     {
         icon: <FaTwitterSquare/>,
-        path: ""
-    },
-    {
-        icon: <FaTelegramPlane/>,
-        path: ""
+        path: "https://x.com/realPalAshish01?t=7LbamLZC3M0dcN-05XVRkg&s=08 "
     }
 ]
 

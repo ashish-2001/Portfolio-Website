@@ -3,7 +3,7 @@ import { FaGraduationCap } from "react-icons/fa"
 function EducationSection(){
 
     return(
-        <div className="bg-blue-100 w-full flex justify-center items-center">
+        <div id="education" className="bg-blue-100 w-full flex justify-center items-center">
             <div className="w-11/12 flex flex-col justify-center items-center gap-6 pt-6 pb-14">
                 <div className="flex flex-col justify-center items-center">
                     <div className="flex justify-center items-center">

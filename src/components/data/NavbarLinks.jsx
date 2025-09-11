@@ -1,19 +1,19 @@
 const NavbarLinks = [
     {
         title: "Home",
-        path:"/"
+        path:"home"
     },
     {
         title: "About",
-        path: "/about"
+        path: "about"
     },
     {
         title: "Skills",
-        path: "/skills"
+        path: "skills"
     },
     {
         title:"Education",
-        path: "/education"
+        path: "education"
     },
     {
         title: "Projects",
@@ -21,11 +21,11 @@ const NavbarLinks = [
     },
     {
         title: "Experience",
-        path: "/experience"
+        path: "experience"
     },
     {
         title: "Contact",
-        path: "/contact"
+        path: "contact"
     }
 ]
 

@@ -11,3 +11,13 @@
     from, to { color: transparent }
     50% { color: orange }
 }
+
+.active-link {
+    color: #2536eb;
+    position: relative;
+}
+
+.active-link span {
+        transition: width 0.3s ease-in-out ;
+        width: 100%
+    }

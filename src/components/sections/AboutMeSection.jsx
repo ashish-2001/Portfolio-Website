@@ -8,7 +8,7 @@ function AboutMeSection(){
     }
 
     return(
-        <div className="w-full flex justify-center items-center">
+        <div id="about" className="w-full flex justify-center items-center">
             <div className="w-11/12 flex flex-col justify-center items-center">
                 <div className="flex items-center gap-2">
                     <FaUser className="text-4xl"/>

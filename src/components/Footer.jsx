@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { IoCall } from "react-icons/io5"
 import { CgMail } from "react-icons/cg"
 import { FaLocationDot } from "react-icons/fa6"
+import SocialMediaLinks from "./data/SocialMediaLinks"
 
 function Footer(){
 
@@ -44,13 +45,15 @@ function Footer(){
                         <p className="flex justify-start items-center gap-2">
                             <FaLocationDot className="text-red-500"/>Lucknow, U.P, India
                         </p>
-                        <div className="flex gap-4 text-2xl">
-                            <FaLinkedin/>
-                            <FaGithub/>
-                            <CgMail/>
-                            <FaTwitterSquare/>
-                            <FaInstagramSquare/>
-                        </div>
+                        <ul className="flex gap-3">
+                            {SocialMediaLinks.map((ele, index) =>{
+                                return(
+                                    <li key={index} className="bg-white p-1 rounded-full">
+                                        <Link to={ele.path} className="text-2xl text-black ">{ele.icon}</Link>
+                                    </li>
+                                )
+                            })}
+                        </ul>
                     </div>
                 </div>
             </div>

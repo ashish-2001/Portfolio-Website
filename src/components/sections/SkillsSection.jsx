@@ -4,7 +4,7 @@ import SkillsInfo from "../data/SkillsIcon"
 function Skills(){
 
     return(
-        <div className="w-full flex justify-center items-center bg-purple-800">
+        <div id="skills" className="w-full flex justify-center items-center bg-purple-800">
             <div className="w-11/12 flex flex-col justify-center items-center gap-4 mb-10">
                 <div className="flex font-bold text-4xl text-white items-center gap-8 justify-center mt-10">
                     <FaLaptopCode className="text-6xl"/>

@@ -23,7 +23,7 @@ function ContactMe(){
     }
 
     return(
-        <div className="bg-blue-200">
+        <div id="contact" className="bg-blue-200">
             <div className="flex flex-col justify-center items-center pt-8">
                 <div className="flex items-center text-4xl font-bold">
                     <MdHeadsetMic/>
