@@ -3,30 +3,34 @@ import { User } from "../db";
 import { sendMail } from "../utils/mailSender";
 
 const userValidator = z.object({
-    name: z.string().name(),
-    email: z.string().email(),
-    number: z.number().number(),
-    message: z.string().message()
+    firstName: z.string().min(1, "Name is required"),
+    lastName:z.string().min(1, "Last name is required"),
+    email: z.string().email("Invalid email format"),
+    phoneNumber: z.string().regex(/^[0-9]{10}$/, "Contact number must be valid"),
+    message: z.string().min(1, "Message is required")
 })
 
 async function contactUsForm(req, res){
 
     try{
 
-        const parsedData = userValidator.safeParse(req.body);
+        const parsedResult = userValidator.safeParse(req.body);
 
-        if(!parsedData.success){
+        if(!parsedResult.success){
             return res.status(400).json({
-                message: "Invalid Input Format"
+                success: false,
+                message: "Invalid Input Format",
+                errors: parsedResult.error.errors
             })
         }
 
-        const { name, email, number, message } = parsedData;
+        const { firstName, lastName, email, phoneNumber, message } = parsedResult.data;
 
         const sender = await User.create({
-            name: name,
+            firstName: firstName,
+            lastName: lastName,
             email: email,
-            number: number,
+            number: phoneNumber,
             message: message
         });
 
@@ -37,24 +41,26 @@ async function contactUsForm(req, res){
         await sendMail(
             process.env.MY_EMAIL,
             "Contact Form Message",
-            `You got a message from ${name}
+            `You got a message from ${firstName}
             
-            Name: ${name}
+            Name: ${firstName} ${lastName}
             Email: ${email}
-            Phone Number: ${number}
+            Phone Number: ${phoneNumber}
             Message: ${message}`
         );
 
-        res.json({
+        return res.status(200).json({
             success: true,
-            senderId: senderId
+            senderId: senderId,
+            message: "Message sent successfully"
         })
     }
     catch(e){
         console.error("Contact form error:", e);
         res.status(500).json({
             success: false,
-            message: "Server Error"
+            message: "Internal server Error",
+            error: e.message
         })
     }
 

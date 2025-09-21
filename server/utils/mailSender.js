@@ -19,7 +19,7 @@ async function sendMail(name, email, message){
         from: `Portfolio Contact <${process.env.EMAIL_USER}>`,
         to: process.env.MAIL_RECEIVER,
         subject: `New message from ${name}`,
-        text: `
+        html: `
                 <h3>Contact Details</h3>
                 <p><strong>Name:</strong> ${name}</p>
                 <p><strong>Email:</strong> ${email}</p>
