@@ -1,6 +1,6 @@
 import { z } from "zod";
-import { User } from "../db";
-import { sendMail } from "../utils/mailSender";
+import { User } from "../db.js";
+import { sendMail } from "../utils/mailSender.js";
 
 const userValidator = z.object({
     firstName: z.string().min(1, "Name is required"),
@@ -27,11 +27,11 @@ async function contactUsForm(req, res){
         const { firstName, lastName, email, phoneNumber, message } = parsedResult.data;
 
         const sender = await User.create({
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            number: phoneNumber,
-            message: message
+            firstName,
+            lastName,
+            email,
+            phoneNumber,
+            message
         });
 
         const senderId = sender._id;
@@ -39,7 +39,7 @@ async function contactUsForm(req, res){
         console.log(senderId);
 
         await sendMail(
-            process.env.MY_EMAIL,
+            process.env.MAIL_USER,
             "Contact Form Message",
             `You got a message from ${firstName}
             
