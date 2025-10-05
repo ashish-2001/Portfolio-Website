@@ -1,5 +1,6 @@
+import React from "react";
 import { CgMail } from "react-icons/cg";
-import { FaGithub, FaLinkedin, FaTelegramPlane, FaTwitterSquare } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitterSquare } from "react-icons/fa";
 
 const SocialMediaLinks = [
     {

@@ -1,8 +1,8 @@
+import React from "react";
 import { BiLogoMongodb, BiLogoPostgresql } from "react-icons/bi";
 import { FaCss3, FaDocker, FaGithub, FaHtml5, FaNode, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { SiExpress, SiKubernetes, SiRedux, SiTurborepo } from "react-icons/si";
+import { SiExpress, SiKubernetes, SiRedux } from "react-icons/si";
 
 const SkillsInfo = [
     {

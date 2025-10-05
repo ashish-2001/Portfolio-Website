@@ -1,3 +1,4 @@
+import React from "react"
 import { Link } from "react-scroll"
 import logo from "../assets/logo.png"
 import NavbarLinks from "./data/NavbarLinks"

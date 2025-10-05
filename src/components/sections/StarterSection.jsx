@@ -1,3 +1,4 @@
+import React from "react"
 import { Link } from "react-router-dom"
 import TypeWriter from "../Typewriter"
 import SocialMediaLinks from "../data/SocialMediaLinks"

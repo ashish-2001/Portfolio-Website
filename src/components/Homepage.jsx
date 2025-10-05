@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom"
+import React from "react"
 import AboutMeSection from "./sections/AboutMeSection"
 import ContactMe from "./sections/ContactSection"
 import EducationSection from "./sections/EducationSection"

@@ -1,4 +1,5 @@
-import { FaChevronRight, FaGithub, FaHeart, FaInstagramSquare, FaLinkedin, FaTwitterSquare } from "react-icons/fa"
+import React from "react"
+import { FaChevronRight, FaHeart } from "react-icons/fa"
 import NavbarLinks from "./data/NavbarLinks"
 import { Link } from "react-router-dom"
 import { IoCall } from "react-icons/io5"
@@ -12,7 +13,7 @@ function Footer(){
         <div className="w-full flex flex-col justify-center items-center bg-blue-900">
             <div className="flex justify-between  flex-row text-white w-11/12 pt-8 text-xl">
                 <div>
-                    <h1 className="text-3xl font-semibold">Ashish's Portfolio</h1>
+                    <h1 className="text-3xl font-semibold">Ashish Portfolio</h1>
                     <p className="pt-6">Thank you for visiting my portfolio website.<br/>
                     connect me over social media</p>
                 </div>

@@ -1,3 +1,4 @@
+import React from "react"
 import { FaUser } from "react-icons/fa"
 import logo from "../../assets/logo.png"
 
@@ -25,7 +26,7 @@ function AboutMeSection(){
                     </div>
                     <div className="flex flex-col gap-10 mt-7">
                         <div>
-                            <h1 className="text-3xl font-bold">I'm Ashish</h1>
+                            <h1 className="text-3xl font-bold">I am Ashish</h1>
                             <p className="font-semibold ">Full Stack Developer | Devops</p>
                         </div>
                         <div className=" flex flex-col gap-3">

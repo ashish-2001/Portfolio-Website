@@ -1,3 +1,4 @@
+import React from "react"
 import { FaLaptopCode } from "react-icons/fa"
 import ProjectsInfo from "../data/ProjectsInformation"
 import { Link } from "react-router-dom"

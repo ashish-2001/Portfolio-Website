@@ -1,3 +1,4 @@
+import React from "react"
 import { FaLaptopCode } from "react-icons/fa"
 import SkillsInfo from "../data/SkillsIcon"
 
