@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react"
 import { useForm } from "react-hook-form"
+import { toast } from "react-hot-toast";
 import { FaUser } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 import { LuSend } from "react-icons/lu";
@@ -10,17 +11,46 @@ import { RiMessage2Fill } from "react-icons/ri";
 
 function ContactMe(){
 
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false)
 
     const {
         register,
         handleSubmit,
         reset,
-        formState: { errors, isSubmitSuccessful }
+        formState: { errors }
     } = useForm();
 
-    const submitContactForm = async() =>{
+    const submitContactForm = async(data) =>{
+        console.log(data);
+        setLoading(true);
+        setSuccess(false);
 
+        try{
+            
+            const response = await fetch("http://localhost:5000/reach/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+
+            const result = await response.json();
+
+            if(response.ok){
+                setSuccess(true)
+                reset()
+            }
+            else{
+                toast.error(result.message || "Failed to send message")
+            }
+        } catch(error){
+            toast.error("Server Error", error.message)
+        }
+        finally{
+            setLoading(false)
+        }
     }
 
     return(
@@ -38,7 +68,7 @@ function ContactMe(){
                                 <FaUser className="text-blue-800"/>
                                 <input 
                                     type="text"
-                                    placeholder="Name"
+                                    placeholder="Enter Your Name"
                                     className="w-[400px] form-style outline-none"
                                     id="senderName"
                                     name="senderName"
@@ -89,7 +119,13 @@ function ContactMe(){
                                 )}
                             </div>
                             <div className="flex justify-end items-center">
-                                <button className="flex items-center cursor-pointer hover:scale-102 transition-all duration-100 bg-blue-700 px-4 py-2 rounded-xl text-xl text-white font-semibold shadow-lg shadow-blue-800/80 gap-1">Submit <LuSend /></button>
+                                <button 
+                                    className={`flex items-center cursor-pointer hover:scale-102 transition-all duration-100 bg-blue-700 px-4 py-2 rounded-xl text-xl text-white font-semibold shadow-lg shadow-blue-800/80 gap-1 ${
+                                        loading ? "bg-gray-400 cursor-not-allowed shadow-gray-400/80"
+                                        : "bg-blue-700 hover:scale-105 shadow-blue-800/80"
+                                    }`}
+                                    disabled={loading}
+                                >{loading ? "Sending..." : "Submit"}<LuSend /></button>
                             </div>
                         </div>
                     </form>

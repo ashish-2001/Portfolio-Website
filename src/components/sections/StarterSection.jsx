@@ -11,7 +11,7 @@ function StarterSection(){
                 <div>
                     <div className="flex flex-col gap-7">
                         <h1 className="text-5xl font-bold">Hi There,</h1>
-                        <h1 className="text-5xl font-bold">I'm Ashish <span className="text-orange-400">Pal</span></h1>
+                        <h1 className="text-5xl font-bold">I am Ashish <span className="text-orange-400">Pal</span></h1>
                         <div className="flex items-center mb-7 gap-2">
                             <span className="text-2xl font-bold">I Am Into</span>
                             <span><TypeWriter/></span>

@@ -3,7 +3,7 @@ function ExperienceSection(){
 
     return(
         <div id="experience" className="bg-blue-50 flex flex-col justify-center items-center h-[70vh] text-4xl font-bold gap-4">
-            <span className="text-blue-700 flex space-x-10">CURRENTLY I'M FRESHER</span>
+            <span className="text-blue-700 flex space-x-10">CURRENTLY I AM FRESHER</span>
             <p className="text-red-600 ">HAVING NO EXPERIENCE</p>
         </div>
     )

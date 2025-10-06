@@ -3,8 +3,7 @@ import { User } from "../db.js";
 import { sendMail } from "../utils/mailSender.js";
 
 const userValidator = z.object({
-    firstName: z.string().min(1, "Name is required"),
-    lastName:z.string().min(1, "Last name is required"),
+    senderName: z.string().min(1, "Name is required"),
     email: z.string().email("Invalid email format"),
     phoneNumber: z.string().regex(/^[0-9]{10}$/, "Contact number must be valid"),
     message: z.string().min(1, "Message is required")
@@ -24,11 +23,10 @@ async function contactUsForm(req, res){
             })
         }
 
-        const { firstName, lastName, email, phoneNumber, message } = parsedResult.data;
+        const { senderName, email, phoneNumber, message } = parsedResult.data;
 
         const sender = await User.create({
-            firstName,
-            lastName,
+            senderName,
             email,
             phoneNumber,
             message
@@ -39,14 +37,10 @@ async function contactUsForm(req, res){
         console.log(senderId);
 
         await sendMail(
-            process.env.MAIL_USER,
-            "Contact Form Message",
-            `You got a message from ${firstName}
-            
-            Name: ${firstName} ${lastName}
-            Email: ${email}
-            Phone Number: ${phoneNumber}
-            Message: ${message}`
+            senderName,
+            email,
+            phoneNumber,
+            message
         );
 
         return res.status(200).json({
