@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 export default function TypeWriter() {
-  // Words to type
-    const words = [" Web Development", " Frontend Developer", " Backend Developer", " Devops"];
+
+    const words = [" Web Development", " Frontend Development", " Backend Development", " Devops"];
 
     const [text, setText] = useState("");
     const [wordIndex, setWordIndex] = useState(0);

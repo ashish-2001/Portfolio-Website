@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { User } from "../db.js";
+import { User } from "../models/db.js";
 import { sendMail } from "../utils/mailSender.js";
 
 const userValidator = z.object({
@@ -33,8 +33,6 @@ async function contactUsForm(req, res){
         });
 
         const senderId = sender._id;
-
-        console.log(senderId);
 
         await sendMail(
             senderName,

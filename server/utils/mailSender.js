@@ -1,4 +1,6 @@
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
+dotenv.config();
 
 async function sendMail(senderName, email, phoneNumber, message){
 
@@ -7,28 +9,24 @@ async function sendMail(senderName, email, phoneNumber, message){
         const transporter = nodemailer.createTransport({
             host: process.env.MAIL_HOST,
             port: 587,
+            secure: false,
             auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS
-            },
-            secure: false
+                user: process.env.MAIL_USER,
+                pass: process.env.MAIL_PASS
+            }
         });
 
-        
-    const info = await transporter.sendMail({
-        from: `Portfolio Contact <${process.env.EMAIL_USER}>`,
-        to: process.env.MAIL_RECEIVER,
-        subject: `New message from ${senderName}`,
-        html: `
-                <h3>Contact Details</h3>
+        await transporter.sendMail({
+            from: `Portfolio Contact <${process.env.MAIL_USER}>`,
+            to: process.env.MAIL_RECEIVER,
+            subject: `New message from ${senderName}`,
+            html: 
+                `<h3>Contact Details</h3>
                 <p><strong>Name:</strong> ${senderName} </p>
                 <p><strong>Email:</strong> ${email}</p>
                 <p><strong>phone Number:</strong> ${phoneNumber}</p>
-                <p><strong>Message:</strong>${message}</p>
-            `
-    })
-
-    console.log("Email sent", info.response);
+                <p><strong>Message:</strong>${message}</p>`
+        });
 
     }
     catch(error){
