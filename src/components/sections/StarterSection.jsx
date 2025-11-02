@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import TypeWriter from "../Typewriter"
-import SocialMediaLinks from "../data/SocialMediaLinks"
+import SocialMediaLinks from "../data/SocialMediaLinks";
+import AshishPic from "../../assets/AshishPic.jpg";
 
 function StarterSection(){
 
@@ -29,7 +30,7 @@ function StarterSection(){
                     </ul>
                 </div>
                 <div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/024/183/502/non_2x/male-avatar-portrait-of-a-young-man-with-a-beard-illustration-of-male-character-in-modern-color-style-vector.jpg" width={450} height={450} />
+                        <img src={AshishPic} className="rounded-full w-[400px] h-[400px]"/>
                 </div>
             </div>
         </div>

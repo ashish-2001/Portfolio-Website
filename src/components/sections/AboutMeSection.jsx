@@ -1,6 +1,7 @@
 import React from "react"
 import { FaUser } from "react-icons/fa"
 import logo from "../../assets/logo.png"
+import AshishPic from "../../assets/AshishPic.jpg";
 
 function AboutMeSection(){
 
@@ -22,7 +23,7 @@ function AboutMeSection(){
                 </div>
                 <div className="flex justify-between mt-14 gap-20 mb-20">
                     <div>
-                        <img src="https://static.vecteezy.com/system/resources/previews/024/183/502/non_2x/male-avatar-portrait-of-a-young-man-with-a-beard-illustration-of-male-character-in-modern-color-style-vector.jpg" width={410} height={420}/>
+                        <img src={AshishPic} className="rounded-full w-[400px] h-[400px]" />
                     </div>
                     <div className="flex flex-col gap-10 mt-7">
                         <div>
