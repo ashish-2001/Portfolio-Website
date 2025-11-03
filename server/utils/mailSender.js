@@ -21,11 +21,15 @@ async function sendMail(senderName, email, phoneNumber, message){
             to: process.env.MAIL_RECEIVER,
             subject: `New message from ${senderName}`,
             html: 
-                `<h3>Contact Details</h3>
-                <p><strong>Name:</strong> ${senderName} </p>
-                <p><strong>Email:</strong> ${email}</p>
-                <p><strong>phone Number:</strong> ${phoneNumber}</p>
-                <p><strong>Message:</strong>${message}</p>`
+                `
+                    <div className="flex flex-col justify-center items-center">
+                        <h3>Contact Details of sender</h3>
+                        <p><strong>Name:</strong> ${senderName} </p>
+                        <p><strong>Email:</strong> ${email}</p>
+                        <p><strong>phone Number:</strong> ${phoneNumber}</p>
+                        <p><strong>Message:</strong>${message}</p>
+                    </div>
+                `
         });
 
     }
